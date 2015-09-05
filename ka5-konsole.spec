@@ -26,6 +26,7 @@ BuildRequires:	kf5-ki18n-devel
 BuildRequires:	kf5-kiconthemes-devel
 BuildRequires:	kf5-kinit-devel
 BuildRequires:	kf5-kio-devel
+BuildRequires:	kf5-kitemmodels-devel
 BuildRequires:	kf5-knotifications-devel
 BuildRequires:	kf5-knotifyconfig-devel
 BuildRequires:	kf5-kparts-devel
