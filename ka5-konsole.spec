@@ -4,7 +4,7 @@
 Summary:	KDE Terminal Emulator
 Name:		ka5-%{kaname}
 Version:	15.08.0
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -20,11 +20,13 @@ BuildRequires:	kf5-kconfigwidgets-devel
 BuildRequires:	kf5-kcoreaddons-devel
 BuildRequires:	kf5-kdelibs4support-devel
 BuildRequires:	kf5-kdoctools-devel
+BuildRequires:	kf5-kemoticons-devel
 BuildRequires:	kf5-kguiaddons-devel
 BuildRequires:	kf5-ki18n-devel
 BuildRequires:	kf5-kiconthemes-devel
 BuildRequires:	kf5-kinit-devel
 BuildRequires:	kf5-kio-devel
+BuildRequires:	kf5-kitemmodels-devel
 BuildRequires:	kf5-knotifications-devel
 BuildRequires:	kf5-knotifyconfig-devel
 BuildRequires:	kf5-kparts-devel
