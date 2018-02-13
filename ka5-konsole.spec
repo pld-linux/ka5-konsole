@@ -1,14 +1,14 @@
-%define		kdeappsver	17.08.2
+%define		kdeappsver	17.12.2
 %define		qtver		5.3.2
 %define		kaname		konsole
 Summary:	KDE Terminal Emulator
 Name:		ka5-%{kaname}
-Version:	17.08.2
+Version:	17.12.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	8f9ba253a333b947950bc5dda6c7fff8
+# Source0-md5:	c674f8d3df128b7c1d2a52a53e014b46
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
