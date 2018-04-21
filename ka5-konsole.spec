@@ -1,14 +1,14 @@
-%define		kdeappsver	17.12.2
+%define		kdeappsver	18.04.0
 %define		qtver		5.3.2
 %define		kaname		konsole
 Summary:	KDE Terminal Emulator
 Name:		ka5-%{kaname}
-Version:	17.12.2
+Version:	18.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	c674f8d3df128b7c1d2a52a53e014b46
+# Source0-md5:	89717feae52541a311607555c543f357
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -75,9 +75,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/konsole
 %attr(755,root,root) %{_bindir}/konsoleprofile
 %attr(755,root,root) %{_libdir}/libkdeinit5_konsole.so
-%attr(755,root,root) %ghost %{_libdir}/libkonsoleprivate.so.17
+%attr(755,root,root) %ghost %{_libdir}/libkonsoleprivate.so.18
 %attr(755,root,root) %{_libdir}/libkonsoleprivate.so.*.*.*
 %attr(755,root,root) %{_libdir}/qt5/plugins/konsolepart.so
+/etc/xdg/konsole.knsrc
 %{_datadir}/metainfo/org.kde.konsole.appdata.xml
 %{_desktopdir}/org.kde.konsole.desktop
 %{_datadir}/knotifications5/konsole.notifyrc
