@@ -1,14 +1,14 @@
-%define		kdeappsver	18.04.0
-%define		qtver		5.3.2
+%define		kdeappsver	18.12.0
+%define		qtver		5.9.0
 %define		kaname		konsole
 Summary:	KDE Terminal Emulator
 Name:		ka5-%{kaname}
-Version:	18.04.0
+Version:	18.12.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	89717feae52541a311607555c543f357
+Source0:	https://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	6e51d07c71cd4b07cf3648e392210d2f
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -43,7 +43,16 @@ BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-KDE Terminal Emulator.
+Konsole is a terminal emulator.
+
+Features
+
+• Tabs
+• Multiple profiles
+• Silence and Activity monitoring
+• Bookmark support
+• Searching
+• Saving output
 
 %prep
 %setup -q -n %{kaname}-%{version}
@@ -78,6 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %ghost %{_libdir}/libkonsoleprivate.so.18
 %attr(755,root,root) %{_libdir}/libkonsoleprivate.so.*.*.*
 %attr(755,root,root) %{_libdir}/qt5/plugins/konsolepart.so
+/etc/xdg/konsole.categories
 /etc/xdg/konsole.knsrc
 %{_datadir}/metainfo/org.kde.konsole.appdata.xml
 %{_desktopdir}/org.kde.konsole.desktop
@@ -87,4 +97,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservices5/ServiceMenus/konsolerun.desktop
 %{_datadir}/kservices5/konsolepart.desktop
 %{_datadir}/kservicetypes5/terminalemulator.desktop
+%{_datadir}/khotkeys/konsole.khotkeys
 #%%{_datadir}/kxmlgui5/konsole
