@@ -1,14 +1,14 @@
-%define		kdeappsver	18.12.1
+%define		kdeappsver	19.04.1
 %define		qtver		5.9.0
 %define		kaname		konsole
 Summary:	KDE Terminal Emulator
 Name:		ka5-%{kaname}
-Version:	18.12.1
+Version:	19.04.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	cfc8cdc3578de53a3e5daea1c5a5c2d0
+# Source0-md5:	9a63b88256a0c93984e895b2d60c4122
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -63,6 +63,7 @@ install -d build
 cd build
 %cmake \
 	-G Ninja \
+	-DHTML_INSTALL_DIR=%{_kdedocdir} \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	..
 %ninja_build
@@ -71,6 +72,7 @@ cd build
 rm -rf $RPM_BUILD_ROOT
 %ninja_install -C build
 
+rm -rf $RPM_BUILD_ROOT%{_kdedocdir}/sr
 %find_lang %{kaname} --all-name --with-kde
 
 %clean
@@ -85,7 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/konsole
 %attr(755,root,root) %{_bindir}/konsoleprofile
 %attr(755,root,root) %{_libdir}/libkdeinit5_konsole.so
-%attr(755,root,root) %ghost %{_libdir}/libkonsoleprivate.so.18
+%attr(755,root,root) %ghost %{_libdir}/libkonsoleprivate.so.19
 %attr(755,root,root) %{_libdir}/libkonsoleprivate.so.*.*.*
 %attr(755,root,root) %{_libdir}/qt5/plugins/konsolepart.so
 /etc/xdg/konsole.categories
