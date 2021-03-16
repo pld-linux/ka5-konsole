@@ -1,14 +1,14 @@
-%define		kdeappsver	19.04.1
+%define		kdeappsver	20.12.3
 %define		qtver		5.9.0
 %define		kaname		konsole
 Summary:	KDE Terminal Emulator
 Name:		ka5-%{kaname}
-Version:	19.04.1
+Version:	20.12.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	9a63b88256a0c93984e895b2d60c4122
+Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	ccb51a46be52c711149f4ea9b3218150
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -48,12 +48,8 @@ Konsole is a terminal emulator.
 
 Features
 
-• Tabs
-• Multiple profiles
-• Silence and Activity monitoring
-• Bookmark support
-• Searching
-• Saving output
+• Tabs • Multiple profiles • Silence and Activity monitoring •
+Bookmark support • Searching • Saving output
 
 %prep
 %setup -q -n %{kaname}-%{version}
@@ -72,7 +68,7 @@ cd build
 rm -rf $RPM_BUILD_ROOT
 %ninja_install -C build
 
-rm -rf $RPM_BUILD_ROOT%{_kdedocdir}/sr
+rm -rf $RPM_BUILD_ROOT%{_kdedocdir}/{sr,zh_CN}
 %find_lang %{kaname} --all-name --with-kde
 
 %clean
@@ -87,11 +83,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/konsole
 %attr(755,root,root) %{_bindir}/konsoleprofile
 %attr(755,root,root) %{_libdir}/libkdeinit5_konsole.so
-%attr(755,root,root) %ghost %{_libdir}/libkonsoleprivate.so.19
+%attr(755,root,root) %ghost %{_libdir}/libkonsoleprivate.so.20
 %attr(755,root,root) %{_libdir}/libkonsoleprivate.so.*.*.*
 %attr(755,root,root) %{_libdir}/qt5/plugins/konsolepart.so
-/etc/xdg/konsole.categories
-/etc/xdg/konsole.knsrc
 %{_datadir}/metainfo/org.kde.konsole.appdata.xml
 %{_desktopdir}/org.kde.konsole.desktop
 %{_datadir}/knotifications5/konsole.notifyrc
@@ -101,4 +95,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservices5/konsolepart.desktop
 %{_datadir}/kservicetypes5/terminalemulator.desktop
 %{_datadir}/khotkeys/konsole.khotkeys
-#%%{_datadir}/kxmlgui5/konsole
+%{_datadir}/knsrcfiles/konsole.knsrc
+%{_datadir}/qlogging-categories5/konsole.categories
