@@ -1,5 +1,6 @@
 %define		kdeappsver	20.12.3
-%define		qtver		5.9.0
+%define		qtver		5.12.0
+%define		kf5ver		5.68.0
 %define		kaname		konsole
 Summary:	KDE Terminal Emulator
 Name:		ka5-%{kaname}
@@ -11,36 +12,68 @@ Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kan
 # Source0-md5:	ccb51a46be52c711149f4ea9b3218150
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
-BuildRequires:	cmake >= 2.8.12
-BuildRequires:	kf5-extra-cmake-modules >= 1.4.0
-BuildRequires:	kf5-kbookmarks-devel
-BuildRequires:	kf5-kcompletion-devel
-BuildRequires:	kf5-kconfig-devel
-BuildRequires:	kf5-kconfigwidgets-devel
-BuildRequires:	kf5-kcoreaddons-devel
-BuildRequires:	kf5-kdelibs4support-devel
-BuildRequires:	kf5-kdoctools-devel
-BuildRequires:	kf5-kemoticons-devel
-BuildRequires:	kf5-kguiaddons-devel
-BuildRequires:	kf5-ki18n-devel
-BuildRequires:	kf5-kiconthemes-devel
-BuildRequires:	kf5-kinit-devel
-BuildRequires:	kf5-kio-devel
-BuildRequires:	kf5-kitemmodels-devel
-BuildRequires:	kf5-knotifications-devel
-BuildRequires:	kf5-knotifyconfig-devel
-BuildRequires:	kf5-kparts-devel
-BuildRequires:	kf5-kpty-devel
-BuildRequires:	kf5-kservice-devel
-BuildRequires:	kf5-ktextwidgets-devel
-BuildRequires:	kf5-kwidgetsaddons-devel
-BuildRequires:	kf5-kwindowsystem-devel
-BuildRequires:	kf5-kxmlgui-devel
+BuildRequires:	Qt5DBus-devel >= %{qtver}
+BuildRequires:	Qt5PrintSupport-devel >= %{qtver}
+BuildRequires:	Qt5Widgets-devel >= %{qtver}
+BuildRequires:	cmake >= 3.13
+BuildRequires:	kf5-extra-cmake-modules >= %{kf5ver}
+BuildRequires:	kf5-kbookmarks-devel >= %{kf5ver}
+BuildRequires:	kf5-kcompletion-devel >= %{kf5ver}
+BuildRequires:	kf5-kconfig-devel >= %{kf5ver}
+BuildRequires:	kf5-kconfigwidgets-devel >= %{kf5ver}
+BuildRequires:	kf5-kcoreaddons-devel >= %{kf5ver}
+BuildRequires:	kf5-kcrash-devel >= %{kf5ver}
+BuildRequires:	kf5-kdbusaddons-devel >= %{kf5ver}
+BuildRequires:	kf5-kdoctools-devel >= %{kf5ver}
+BuildRequires:	kf5-kglobalaccel-devel >= %{kf5ver}
+BuildRequires:	kf5-kguiaddons-devel >= %{kf5ver}
+BuildRequires:	kf5-ki18n-devel >= %{kf5ver}
+BuildRequires:	kf5-kiconthemes-devel >= %{kf5ver}
+BuildRequires:	kf5-kinit-devel >= %{kf5ver}
+BuildRequires:	kf5-kio-devel >= %{kf5ver}
+BuildRequires:	kf5-knewstuff-devel >= %{kf5ver}
+BuildRequires:	kf5-knotifications-devel >= %{kf5ver}
+BuildRequires:	kf5-knotifyconfig-devel >= %{kf5ver}
+BuildRequires:	kf5-kparts-devel >= %{kf5ver}
+BuildRequires:	kf5-kpty-devel >= %{kf5ver}
+BuildRequires:	kf5-kservice-devel >= %{kf5ver}
+BuildRequires:	kf5-ktextwidgets-devel >= %{kf5ver}
+BuildRequires:	kf5-kwidgetsaddons-devel >= %{kf5ver}
+BuildRequires:	kf5-kwindowsystem-devel >= %{kf5ver}
+BuildRequires:	kf5-kxmlgui-devel >= %{kf5ver}
+BuildRequires:	libstdc++-devel >= 6:4.8.1
 BuildRequires:	ninja
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xz
+Requires:	Qt5Core >= %{qtver}
+Requires:	Qt5DBus >= %{qtver}
+Requires:	Qt5PrintSupport >= %{qtver}
+Requires:	Qt5Widgets >= %{qtver}
+Requires:	kf5-kbookmarks >= %{kf5ver}
+Requires:	kf5-kcompletion >= %{kf5ver}
+Requires:	kf5-kconfig >= %{kf5ver}
+Requires:	kf5-kconfigwidgets >= %{kf5ver}
+Requires:	kf5-kcoreaddons >= %{kf5ver}
+Requires:	kf5-kcrash >= %{kf5ver}
+Requires:	kf5-kdbusaddons >= %{kf5ver}
+Requires:	kf5-kglobalaccel >= %{kf5ver}
+Requires:	kf5-kguiaddons >= %{kf5ver}
+Requires:	kf5-ki18n >= %{kf5ver}
+Requires:	kf5-kiconthemes >= %{kf5ver}
+Requires:	kf5-kio >= %{kf5ver}
+Requires:	kf5-knewstuff >= %{kf5ver}
+Requires:	kf5-knotifications >= %{kf5ver}
+Requires:	kf5-knotifyconfig >= %{kf5ver}
+Requires:	kf5-kparts >= %{kf5ver}
+Requires:	kf5-kpty >= %{kf5ver}
+Requires:	kf5-kservice >= %{kf5ver}
+Requires:	kf5-ktextwidgets >= %{kf5ver}
+Requires:	kf5-kwidgetsaddons >= %{kf5ver}
+Requires:	kf5-kwindowsystem >= %{kf5ver}
+Requires:	kf5-kxmlgui >= %{kf5ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
