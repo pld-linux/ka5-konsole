@@ -44,7 +44,7 @@ BuildRequires:	kf5-kxmlgui-devel >= %{kf5ver}
 BuildRequires:	libstdc++-devel >= 6:4.8.1
 BuildRequires:	ninja
 BuildRequires:	qt5-build >= %{qtver}
-BuildRequires:	rpmbuild(macros) >= 1.164
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xz
