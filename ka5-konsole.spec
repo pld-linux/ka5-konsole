@@ -1,6 +1,6 @@
 %define		kdeappsver	21.04.0
-%define		qtver		5.12.0
-%define		kf5ver		5.68.0
+%define		qtver		5.14.0
+%define		kf5ver		5.71.0
 %define		kaname		konsole
 Summary:	KDE Terminal Emulator
 Name:		ka5-%{kaname}
@@ -41,7 +41,7 @@ BuildRequires:	kf5-ktextwidgets-devel >= %{kf5ver}
 BuildRequires:	kf5-kwidgetsaddons-devel >= %{kf5ver}
 BuildRequires:	kf5-kwindowsystem-devel >= %{kf5ver}
 BuildRequires:	kf5-kxmlgui-devel >= %{kf5ver}
-BuildRequires:	libstdc++-devel >= 6:4.8.1
+BuildRequires:	libstdc++-devel >= 6:8
 BuildRequires:	ninja
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.736
