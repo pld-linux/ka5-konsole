@@ -84,6 +84,14 @@ Features
 • Tabs • Multiple profiles • Silence and Activity monitoring •
 Bookmark support • Searching • Saving output
 
+%description -l pl.UTF-8
+Konsole jest emulatorem terminala.
+
+Cechy
+
+• Karty • Wiele profili • Monitoring ciszy i aktywności •
+Zakładki • Szukanie • Zapisywanie danych wyjściowych
+
 %prep
 %setup -q -n %{kaname}-%{version}
 
