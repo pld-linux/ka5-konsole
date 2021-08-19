@@ -1,15 +1,15 @@
-%define		kdeappsver	21.04.3
+%define		kdeappsver	21.08.0
 %define		qtver		5.14.0
 %define		kf5ver		5.71.0
 %define		kaname		konsole
 Summary:	KDE Terminal Emulator
 Name:		ka5-%{kaname}
-Version:	21.04.3
+Version:	21.08.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	b482a35fd5e433cfd5553e051219d9a5
+# Source0-md5:	220c82eb5827952034aa4ad2924685c6
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
@@ -89,8 +89,8 @@ Konsole jest emulatorem terminala.
 
 Cechy
 
-• Karty • Wiele profili • Monitoring ciszy i aktywności •
-Zakładki • Szukanie • Zapisywanie danych wyjściowych
+• Karty • Wiele profili • Monitoring ciszy i aktywności • Zakładki •
+Szukanie • Zapisywanie danych wyjściowych
 
 %prep
 %setup -q -n %{kaname}-%{version}
@@ -123,9 +123,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/konsole
 %attr(755,root,root) %{_bindir}/konsoleprofile
-%attr(755,root,root) %{_libdir}/libkdeinit5_konsole.so
 %ghost %{_libdir}/libkonsoleprivate.so.21
-%attr(755,root,root) %{_libdir}/libkonsoleprivate.so.*.*.*
+%{_libdir}/libkonsoleprivate.so.*.*.*
+%ghost %{_libdir}/libkonsoleapp.so.21
+%{_libdir}/libkonsoleapp.so.*.*.*
 %attr(755,root,root) %{_libdir}/qt5/plugins/konsolepart.so
 %{_datadir}/metainfo/org.kde.konsole.appdata.xml
 %{_desktopdir}/org.kde.konsole.desktop
