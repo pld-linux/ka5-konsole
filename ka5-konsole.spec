@@ -1,5 +1,5 @@
 %define		kdeappsver	21.08.1
-%define		qtver		5.14.0
+%define		qtver		5.15.0
 %define		kf5ver		5.71.0
 %define		kaname		konsole
 Summary:	KDE Terminal Emulator
@@ -18,7 +18,6 @@ BuildRequires:	Qt5Widgets-devel >= %{qtver}
 BuildRequires:	cmake >= 3.13
 BuildRequires:	kf5-extra-cmake-modules >= %{kf5ver}
 BuildRequires:	kf5-kbookmarks-devel >= %{kf5ver}
-BuildRequires:	kf5-kcompletion-devel >= %{kf5ver}
 BuildRequires:	kf5-kconfig-devel >= %{kf5ver}
 BuildRequires:	kf5-kconfigwidgets-devel >= %{kf5ver}
 BuildRequires:	kf5-kcoreaddons-devel >= %{kf5ver}
@@ -29,7 +28,6 @@ BuildRequires:	kf5-kglobalaccel-devel >= %{kf5ver}
 BuildRequires:	kf5-kguiaddons-devel >= %{kf5ver}
 BuildRequires:	kf5-ki18n-devel >= %{kf5ver}
 BuildRequires:	kf5-kiconthemes-devel >= %{kf5ver}
-BuildRequires:	kf5-kinit-devel >= %{kf5ver}
 BuildRequires:	kf5-kio-devel >= %{kf5ver}
 BuildRequires:	kf5-knewstuff-devel >= %{kf5ver}
 BuildRequires:	kf5-knotifications-devel >= %{kf5ver}
@@ -53,7 +51,6 @@ Requires:	Qt5DBus >= %{qtver}
 Requires:	Qt5PrintSupport >= %{qtver}
 Requires:	Qt5Widgets >= %{qtver}
 Requires:	kf5-kbookmarks >= %{kf5ver}
-Requires:	kf5-kcompletion >= %{kf5ver}
 Requires:	kf5-kconfig >= %{kf5ver}
 Requires:	kf5-kconfigwidgets >= %{kf5ver}
 Requires:	kf5-kcoreaddons >= %{kf5ver}
