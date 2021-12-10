@@ -1,15 +1,15 @@
-%define		kdeappsver	21.08.3
+%define		kdeappsver	21.12.0
 %define		qtver		5.15.0
 %define		kf5ver		5.71.0
 %define		kaname		konsole
 Summary:	KDE Terminal Emulator
 Name:		ka5-%{kaname}
-Version:	21.08.3
+Version:	21.12.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	6149de22e5d2336c4e91f7819285e503
+# Source0-md5:	cc980609c26e904029b652cf987ba452
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
@@ -120,11 +120,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/konsole
 %attr(755,root,root) %{_bindir}/konsoleprofile
-%ghost %{_libdir}/libkonsoleprivate.so.21
+%ghost %{_libdir}/libkonsoleprivate.so.1
 %{_libdir}/libkonsoleprivate.so.*.*.*
-%ghost %{_libdir}/libkonsoleapp.so.21
+%ghost %{_libdir}/libkonsoleapp.so.1
 %{_libdir}/libkonsoleapp.so.*.*.*
 %attr(755,root,root) %{_libdir}/qt5/plugins/konsolepart.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/konsoleplugins/konsole_sshmanagerplugin.so
 %{_datadir}/metainfo/org.kde.konsole.appdata.xml
 %{_desktopdir}/org.kde.konsole.desktop
 %{_datadir}/knotifications5/konsole.notifyrc
