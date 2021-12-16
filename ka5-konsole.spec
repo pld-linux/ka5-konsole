@@ -5,7 +5,7 @@
 Summary:	KDE Terminal Emulator
 Name:		ka5-%{kaname}
 Version:	21.12.0
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -125,6 +125,7 @@ rm -rf $RPM_BUILD_ROOT
 %ghost %{_libdir}/libkonsoleapp.so.1
 %{_libdir}/libkonsoleapp.so.*.*.*
 %attr(755,root,root) %{_libdir}/qt5/plugins/konsolepart.so
+%dir %{_libdir}/qt5/plugins/konsoleplugin
 %attr(755,root,root) %{_libdir}/qt5/plugins/konsoleplugins/konsole_sshmanagerplugin.so
 %{_datadir}/metainfo/org.kde.konsole.appdata.xml
 %{_desktopdir}/org.kde.konsole.desktop
