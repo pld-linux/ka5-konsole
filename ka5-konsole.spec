@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	21.12.3
+%define		kdeappsver	22.04.0
 %define		qtver		5.15.0
 %define		kf5ver		5.71.0
 %define		kaname		konsole
 Summary:	KDE Terminal Emulator
 Name:		ka5-%{kaname}
-Version:	21.12.3
+Version:	22.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	654dbcc3bb3871a6e3123862492bd9c8
+# Source0-md5:	06be5e16aeeb2afaa66ed430aa5882e4
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
@@ -89,8 +89,8 @@ Konsole jest emulatorem terminala.
 
 Cechy
 
-• Karty • Wiele profili • Monitoring ciszy i aktywności • Zakładki •
-Szukanie • Zapisywanie danych wyjściowych
+• Karty • Wiele profili • Monitoring ciszy i aktywności •
+Zakładki • Szukanie • Zapisywanie danych wyjściowych
 
 %prep
 %setup -q -n %{kaname}-%{version}
@@ -140,9 +140,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/org.kde.konsole.desktop
 %{_datadir}/knotifications5/konsole.notifyrc
 %{_datadir}/konsole
-%{_datadir}/kservices5/ServiceMenus/konsolerun.desktop
 %{_datadir}/kservices5/konsolepart.desktop
 %{_datadir}/kservicetypes5/terminalemulator.desktop
-%{_datadir}/khotkeys/konsole.khotkeys
 %{_datadir}/knsrcfiles/konsole.knsrc
 %{_datadir}/qlogging-categories5/konsole.categories
+%attr(755,root,root) %{_libdir}/kconf_update_bin/konsole_globalaccel
+%attr(755,root,root) %{_libdir}/qt5/plugins/konsoleplugins/konsole_quickcommandsplugin.so
+%{_datadir}/kconf_update/konsole_globalaccel.upd
+%{_datadir}/kio/servicemenus/konsolerun.desktop
