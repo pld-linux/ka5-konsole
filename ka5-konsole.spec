@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.12.3
+%define		kdeappsver	23.04.0
 %define		qtver		5.15.2
 %define		kf5ver		5.71.0
 %define		kaname		konsole
 Summary:	KDE Terminal Emulator
 Name:		ka5-%{kaname}
-Version:	22.12.3
-Release:	2
+Version:	23.04.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	9ee510b6208efb7f760e9340d4a0c587
+# Source0-md5:	16ed23c8e2051720ddd2f23ea4a9cf3f
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
@@ -130,7 +130,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%defattr(644,root,root,755)
+/etc/xdg/konsolerc
 %attr(755,root,root) %{_bindir}/konsole
 %attr(755,root,root) %{_bindir}/konsoleprofile
 %ghost %{_libdir}/libkonsoleprivate.so.1
@@ -148,7 +148,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservicetypes5/terminalemulator.desktop
 %{_datadir}/knsrcfiles/konsole.knsrc
 %{_datadir}/qlogging-categories5/konsole.categories
-%attr(755,root,root) %{_libdir}/kconf_update_bin/konsole_globalaccel
 %attr(755,root,root) %{_libdir}/qt5/plugins/konsoleplugins/konsole_quickcommandsplugin.so
-%{_datadir}/kconf_update/konsole_globalaccel.upd
 %{_datadir}/kio/servicemenus/konsolerun.desktop
+%attr(755,root,root)%{_libdir}/kconf_update_bin/konsole_globalaccel
+%attr(755,root,root)%{_libdir}/kconf_update_bin/konsole_show_menubar
+%{_datadir}/kconf_update/konsole.upd
+%attr(755,root,root)%{_datadir}/kconf_update/konsole_add_hamburgermenu_to_toolbar.sh
+%{zsh_compdir}/_konsole
