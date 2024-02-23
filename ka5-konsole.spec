@@ -1,79 +1,79 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	23.08.4
+%define		kdeappsver	24.01.95
 %define		qtver		5.15.2
 %define		kf5ver		5.71.0
 %define		kaname		konsole
 Summary:	KDE Terminal Emulator
 Name:		ka5-%{kaname}
-Version:	23.08.4
-Release:	1
+Version:	24.01.95
+Release:	0.1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	2613c65b0925fd0adac17c02dcafeaa3
+Source0:	https://download.kde.org/unstable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	445b711c0f5f02b55bc20e029384c845
 URL:		http://www.kde.org/
-BuildRequires:	Qt5Core-devel >= %{qtver}
-BuildRequires:	Qt5DBus-devel >= %{qtver}
-BuildRequires:	Qt5PrintSupport-devel >= %{qtver}
-BuildRequires:	Qt5Widgets-devel >= %{qtver}
+BuildRequires:	Qt6Core-devel >= %{qtver}
+BuildRequires:	Qt6DBus-devel >= %{qtver}
+BuildRequires:	Qt6PrintSupport-devel >= %{qtver}
+BuildRequires:	Qt6Widgets-devel >= %{qtver}
 BuildRequires:	cmake >= 3.20
-BuildRequires:	kf5-extra-cmake-modules >= %{kf5ver}
-BuildRequires:	kf5-kbookmarks-devel >= %{kf5ver}
-BuildRequires:	kf5-kconfig-devel >= %{kf5ver}
-BuildRequires:	kf5-kconfigwidgets-devel >= %{kf5ver}
-BuildRequires:	kf5-kcoreaddons-devel >= %{kf5ver}
-BuildRequires:	kf5-kcrash-devel >= %{kf5ver}
-BuildRequires:	kf5-kdbusaddons-devel >= %{kf5ver}
-BuildRequires:	kf5-kdoctools-devel >= %{kf5ver}
-BuildRequires:	kf5-kglobalaccel-devel >= %{kf5ver}
-BuildRequires:	kf5-kguiaddons-devel >= %{kf5ver}
-BuildRequires:	kf5-ki18n-devel >= %{kf5ver}
-BuildRequires:	kf5-kiconthemes-devel >= %{kf5ver}
-BuildRequires:	kf5-kio-devel >= %{kf5ver}
-BuildRequires:	kf5-knewstuff-devel >= %{kf5ver}
-BuildRequires:	kf5-knotifications-devel >= %{kf5ver}
-BuildRequires:	kf5-knotifyconfig-devel >= %{kf5ver}
-BuildRequires:	kf5-kparts-devel >= %{kf5ver}
-BuildRequires:	kf5-kpty-devel >= %{kf5ver}
-BuildRequires:	kf5-kservice-devel >= %{kf5ver}
-BuildRequires:	kf5-ktextwidgets-devel >= %{kf5ver}
-BuildRequires:	kf5-kwidgetsaddons-devel >= %{kf5ver}
-BuildRequires:	kf5-kwindowsystem-devel >= %{kf5ver}
-BuildRequires:	kf5-kxmlgui-devel >= %{kf5ver}
+BuildRequires:	kf6-extra-cmake-modules >= %{kf5ver}
+BuildRequires:	kf6-kbookmarks-devel >= %{kf5ver}
+BuildRequires:	kf6-kconfig-devel >= %{kf5ver}
+BuildRequires:	kf6-kconfigwidgets-devel >= %{kf5ver}
+BuildRequires:	kf6-kcoreaddons-devel >= %{kf5ver}
+BuildRequires:	kf6-kcrash-devel >= %{kf5ver}
+BuildRequires:	kf6-kdbusaddons-devel >= %{kf5ver}
+BuildRequires:	kf6-kdoctools-devel >= %{kf5ver}
+BuildRequires:	kf6-kglobalaccel-devel >= %{kf5ver}
+BuildRequires:	kf6-kguiaddons-devel >= %{kf5ver}
+BuildRequires:	kf6-ki18n-devel >= %{kf5ver}
+BuildRequires:	kf6-kiconthemes-devel >= %{kf5ver}
+BuildRequires:	kf6-kio-devel >= %{kf5ver}
+BuildRequires:	kf6-knewstuff-devel >= %{kf5ver}
+BuildRequires:	kf6-knotifications-devel >= %{kf5ver}
+BuildRequires:	kf6-knotifyconfig-devel >= %{kf5ver}
+BuildRequires:	kf6-kparts-devel >= %{kf5ver}
+BuildRequires:	kf6-kpty-devel >= %{kf5ver}
+BuildRequires:	kf6-kservice-devel >= %{kf5ver}
+BuildRequires:	kf6-ktextwidgets-devel >= %{kf5ver}
+BuildRequires:	kf6-kwidgetsaddons-devel >= %{kf5ver}
+BuildRequires:	kf6-kwindowsystem-devel >= %{kf5ver}
+BuildRequires:	kf6-kxmlgui-devel >= %{kf5ver}
 BuildRequires:	libstdc++-devel >= 6:8
 BuildRequires:	ninja
-BuildRequires:	qt5-build >= %{qtver}
+BuildRequires:	qt6-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xz
-Requires:	Qt5Core >= %{qtver}
-Requires:	Qt5DBus >= %{qtver}
-Requires:	Qt5PrintSupport >= %{qtver}
-Requires:	Qt5Widgets >= %{qtver}
-Requires:	kf5-kbookmarks >= %{kf5ver}
-Requires:	kf5-kconfig >= %{kf5ver}
-Requires:	kf5-kconfigwidgets >= %{kf5ver}
-Requires:	kf5-kcoreaddons >= %{kf5ver}
-Requires:	kf5-kcrash >= %{kf5ver}
-Requires:	kf5-kdbusaddons >= %{kf5ver}
-Requires:	kf5-kglobalaccel >= %{kf5ver}
-Requires:	kf5-kguiaddons >= %{kf5ver}
-Requires:	kf5-ki18n >= %{kf5ver}
-Requires:	kf5-kiconthemes >= %{kf5ver}
-Requires:	kf5-kio >= %{kf5ver}
-Requires:	kf5-knewstuff >= %{kf5ver}
-Requires:	kf5-knotifications >= %{kf5ver}
-Requires:	kf5-knotifyconfig >= %{kf5ver}
-Requires:	kf5-kparts >= %{kf5ver}
-Requires:	kf5-kpty >= %{kf5ver}
-Requires:	kf5-kservice >= %{kf5ver}
-Requires:	kf5-ktextwidgets >= %{kf5ver}
-Requires:	kf5-kwidgetsaddons >= %{kf5ver}
-Requires:	kf5-kwindowsystem >= %{kf5ver}
-Requires:	kf5-kxmlgui >= %{kf5ver}
+Requires:	Qt6Core >= %{qtver}
+Requires:	Qt6DBus >= %{qtver}
+Requires:	Qt6PrintSupport >= %{qtver}
+Requires:	Qt6Widgets >= %{qtver}
+Requires:	kf6-kbookmarks >= %{kf5ver}
+Requires:	kf6-kconfig >= %{kf5ver}
+Requires:	kf6-kconfigwidgets >= %{kf5ver}
+Requires:	kf6-kcoreaddons >= %{kf5ver}
+Requires:	kf6-kcrash >= %{kf5ver}
+Requires:	kf6-kdbusaddons >= %{kf5ver}
+Requires:	kf6-kglobalaccel >= %{kf5ver}
+Requires:	kf6-kguiaddons >= %{kf5ver}
+Requires:	kf6-ki18n >= %{kf5ver}
+Requires:	kf6-kiconthemes >= %{kf5ver}
+Requires:	kf6-kio >= %{kf5ver}
+Requires:	kf6-knewstuff >= %{kf5ver}
+Requires:	kf6-knotifications >= %{kf5ver}
+Requires:	kf6-knotifyconfig >= %{kf5ver}
+Requires:	kf6-kparts >= %{kf5ver}
+Requires:	kf6-kpty >= %{kf5ver}
+Requires:	kf6-kservice >= %{kf5ver}
+Requires:	kf6-ktextwidgets >= %{kf5ver}
+Requires:	kf6-kwidgetsaddons >= %{kf5ver}
+Requires:	kf6-kwindowsystem >= %{kf5ver}
+Requires:	kf6-kxmlgui >= %{kf5ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -89,8 +89,8 @@ Konsole jest emulatorem terminala.
 
 Cechy
 
-• Karty • Wiele profili • Monitoring ciszy i aktywności •
-Zakładki • Szukanie • Zapisywanie danych wyjściowych
+• Karty • Wiele profili • Monitoring ciszy i aktywności • Zakładki •
+Szukanie • Zapisywanie danych wyjściowych
 
 %prep
 %setup -q -n %{kaname}-%{version}
@@ -131,26 +131,22 @@ rm -rf $RPM_BUILD_ROOT
 /etc/xdg/konsolerc
 %attr(755,root,root) %{_bindir}/konsole
 %attr(755,root,root) %{_bindir}/konsoleprofile
-%ghost %{_libdir}/libkonsoleprivate.so.1
-%{_libdir}/libkonsoleprivate.so.*.*.*
-%ghost %{_libdir}/libkonsoleapp.so.1
-%{_libdir}/libkonsoleapp.so.*.*.*
-%attr(755,root,root) %{_libdir}/qt5/plugins/konsolepart.so
-%dir %{_libdir}/qt5/plugins/konsoleplugins
-%attr(755,root,root) %{_libdir}/qt5/plugins/konsoleplugins/konsole_sshmanagerplugin.so
-%{_datadir}/metainfo/org.kde.konsole.appdata.xml
+%attr(755,root,root) %{_libdir}/kconf_update_bin/konsole_globalaccel
+%attr(755,root,root) %{_libdir}/kconf_update_bin/konsole_show_menubar
+%attr(755,root,root) %{_libdir}/libkonsoleapp.so.*.*
+%attr(755,root,root) %{_libdir}/libkonsoleprivate.so.*.*
+%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/parts/konsolepart.so
+%dir %{_libdir}/qt6/plugins/konsoleplugins
+%attr(755,root,root) %{_libdir}/qt6/plugins/konsoleplugins/konsole_quickcommandsplugin.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/konsoleplugins/konsole_sshmanagerplugin.so
 %{_desktopdir}/org.kde.konsole.desktop
-%{_datadir}/knotifications5/konsole.notifyrc
-%{_datadir}/konsole
-%{_datadir}/kservices5/konsolepart.desktop
-%{_datadir}/kservicetypes5/terminalemulator.desktop
-%{_datadir}/knsrcfiles/konsole.knsrc
-%{_datadir}/qlogging-categories5/konsole.categories
-%attr(755,root,root) %{_libdir}/qt5/plugins/konsoleplugins/konsole_quickcommandsplugin.so
-%{_datadir}/kio/servicemenus/konsolerun.desktop
-%attr(755,root,root)%{_libdir}/kconf_update_bin/konsole_globalaccel
-%attr(755,root,root)%{_libdir}/kconf_update_bin/konsole_show_menubar
 %{_datadir}/kconf_update/konsole.upd
-%attr(755,root,root)%{_datadir}/kconf_update/konsole_add_hamburgermenu_to_toolbar.sh
-%{zsh_compdir}/_konsole
+%{_datadir}/kconf_update/konsole_add_hamburgermenu_to_toolbar.sh
 %{_datadir}/kglobalaccel/org.kde.konsole.desktop
+%{_datadir}/kio/servicemenus/konsolerun.desktop
+%{_datadir}/knotifications6/konsole.notifyrc
+%{_datadir}/knsrcfiles/konsole.knsrc
+%{_datadir}/konsole
+%{_datadir}/metainfo/org.kde.konsole.appdata.xml
+%{_datadir}/qlogging-categories6/konsole.categories
+%{zsh_compdir}/_konsole
