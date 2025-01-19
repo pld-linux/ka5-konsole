@@ -16,6 +16,7 @@ Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kan
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
+BuildRequires:	Qt5Multimedia-devel >= %{qtver}
 BuildRequires:	Qt5PrintSupport-devel >= %{qtver}
 BuildRequires:	Qt5Widgets-devel >= %{qtver}
 BuildRequires:	cmake >= 3.20
@@ -42,6 +43,7 @@ BuildRequires:	kf5-ktextwidgets-devel >= %{kf5ver}
 BuildRequires:	kf5-kwidgetsaddons-devel >= %{kf5ver}
 BuildRequires:	kf5-kwindowsystem-devel >= %{kf5ver}
 BuildRequires:	kf5-kxmlgui-devel >= %{kf5ver}
+BuildRequires:	libicu-devel >= 61.0
 BuildRequires:	libstdc++-devel >= 6:8
 BuildRequires:	ninja
 BuildRequires:	qt5-build >= %{qtver}
@@ -49,6 +51,7 @@ BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xz
+BuildRequires:	zlib-devel
 Requires:	Qt5Core >= %{qtver}
 Requires:	Qt5DBus >= %{qtver}
 Requires:	Qt5PrintSupport >= %{qtver}
