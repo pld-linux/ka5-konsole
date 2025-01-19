@@ -52,6 +52,7 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xz
 BuildRequires:	zlib-devel
+Requires(post,postun):	desktop-file-utils
 Requires:	Qt5Core >= %{qtver}
 Requires:	Qt5DBus >= %{qtver}
 Requires:	Qt5PrintSupport >= %{qtver}
@@ -126,8 +127,13 @@ rm -rf $RPM_BUILD_ROOT%{_kdedocdir}/{sr,zh_CN}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/ldconfig
-%postun	-p /sbin/ldconfig
+%post
+/sbin/ldconfig
+%update_desktop_database_post
+
+%postun
+/sbin/ldconfig
+%update_desktop_database_postun
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
